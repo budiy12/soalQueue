@@ -123,12 +123,36 @@ int main(){
         }
     }
     
-    cout<<"\nSKEMA DUDUK:\n";
-    cout<<"Keluar<--";
+    cout<<"\n[SKEMA DUDUK]:\n";
+    cout<<"Keluar <-- ";
     traversal(Q,0,maks_kursi);
-    cout<<"<--Masuk";
+    cout<<"<-- Masuk ";
     if (maks_kursi<penumpang){
         cout<<"\nBerdiri: ";
         traversal(Q,maks_kursi,penumpang);
     }
 }
+
+/*
+-----test case 1-----
+3
+2
+Bobi 
+N
+Ani 
+H
+
+-----test case 2-----
+4
+5
+Rossa 
+N
+Wanda 
+H
+May 
+L
+Stefan 
+N
+Jessi 
+D
+*/
