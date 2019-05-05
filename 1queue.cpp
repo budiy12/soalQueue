@@ -23,13 +23,6 @@ void createQueue(Queue& Q){
     Q.Tail = NULL;
 }
 
-int cekPrior(char kode){
-    if (kode=='H') return 0;
-    if (kode=='L') return 1;
-    if (kode=='D') return 2;
-    if (kode=='N') return 3;
-}
-
 void createElemen(pointer& p,string nama, string jus, int prior){
     p = new ElemenQueue;
     p->nama = nama;
