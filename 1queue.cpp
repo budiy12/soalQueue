@@ -81,7 +81,7 @@ void deleteQueue(Queue& Q, pointer& pHapus){
 void traversal(Queue Q){
     pointer pBantu = Q.Head;
     while(pBantu!=NULL){
-        cout<<pBantu->nama<<" ";
+        cout<<pBantu->nama<<" ("<<pBantu->jus<<") \n";
         pBantu = pBantu->next;
     }
 }
@@ -92,7 +92,10 @@ int main(){
     createQueue(Q);
 
     cout<<"Banyak Pelanggan: ";cin>>byk_pelanggan;
-    
-
-    
+    for (int i=0;i<byk_pelanggan;i++){
+        createElemen(p);
+        insertQueue(Q,p);
+    }
+    cout<<"\nUrutan yang dilayani:\n";
+    traversal(Q);
 }
