@@ -30,11 +30,11 @@ int cekPrior(char kode){
     if (kode=='N') return 3;
 }
 
-void createElemen(pointer& p){
+void createElemen(pointer& p,string nama, string jus, int prior){
     p = new ElemenQueue;
-    cout<<"Nama : ";cin>>p->nama;
-    cout<<"Jus  : ";cin>>p->jus;
-    p->priority = 0;
+    p->nama = nama;
+    p->jus = jus;
+    p->priority = prior;
     p->next = NULL;
 }
 
@@ -88,13 +88,25 @@ void traversal(Queue Q){
 
 int main(){
     pointer p,h;
+    string nama, jus;
+    string buah[5];
     int byk_pelanggan, jml_pesanan;
     createQueue(Q);
 
     cout<<"Banyak Pelanggan: ";cin>>byk_pelanggan;
     for (int i=0;i<byk_pelanggan;i++){
-        createElemen(p);
-        insertQueue(Q,p);
+        cout<<"Nama  : ";cin>>nama;
+        cout<<"Jumlah: ";cin>>jml_pesanan;
+        for (int j=0;j<jml_pesanan;j++){
+            cout<<"Jus: ";cin>>jus;
+            int h = 0;
+            while(buah[h]!=""&&buah[h]!=jus){
+                h++;
+            }
+            buah[h]=jus;
+            createElemen(p,nama,jus,h);
+            insertQueue(Q,p);
+        }
     }
     cout<<"\nUrutan yang dilayani:\n";
     traversal(Q);
